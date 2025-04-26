@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pytest-shutil"
+version = "1.9.0"
+description = "A goodie-bag of unix shell and environment tools for py.test"
+authors = [
+    {name = "Edward Easton", email = "eeaston@gmail.com"},
+]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Development Status :: 5 - Production/Stable",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Utilities",
+    "Intended Audience :: Developers",
+    "Operating System :: POSIX",
+    'Operating System :: Microsoft :: Windows',
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13"
+]
+dependencies = [
+    "pytest",
+    "execnet",
+    "termcolor",
+    "importlib-metadata",
+]
+
+[project.entry-points.pytest11]
+workspace = "pytest_shutil.workspace"
+
+[tool.setuptools]
+py-modules = ["pytest_shutil"]
+
+[tool.pytest.ini_options]
+addopts = "-vv --showlocals"
+norecursedirs = [
+    ".git",
+    "*.egg",
+    "build",
+    "dist"
+]
+
+[tool.distutils.bdist_wheel]
+universal = false
