@@ -71,6 +71,10 @@ indent-width = 4
 
 target-version = "py39"
 
+[tool.ruff.format]
+# 5. Use single quotes in `ruff format`.
+quote-style = "single"
+
 [tool.setuptools]
 py-modules = ["pytest_shutil"]
 
